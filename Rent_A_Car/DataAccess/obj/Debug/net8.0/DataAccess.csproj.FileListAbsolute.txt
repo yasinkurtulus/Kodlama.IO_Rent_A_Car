@@ -13,3 +13,6 @@ D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\DataAccess\obj\Debug\net8.0\DataAcces
 D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
 D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\DataAccess\obj\Debug\net8.0\DataAccess.pdb
 D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\DataAccess\bin\Debug\net8.0\Core.dll
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\DataAccess\bin\Debug\net8.0\Core.pdb
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json

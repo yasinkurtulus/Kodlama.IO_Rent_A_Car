@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrate;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -58,6 +59,11 @@ namespace Business.Concrate
         public List<Car> GetByColorId(int colorId)
         {
             return icardal.GetAll().Where(p => p.ColorId == colorId).ToList();
+        }
+
+        public List<CarDetailDto> GetByDetails()
+        {
+            return icardal.GetByDetails();
         }
 
         public void Update(Car car)

@@ -67,3 +67,6 @@ D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\console\obj\Debug\net8.0\refint\conso
 D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\console\obj\Debug\net8.0\console.pdb
 D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\console\obj\Debug\net8.0\console.genruntimeconfig.cache
 D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\console\obj\Debug\net8.0\ref\console.dll
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\console\bin\Debug\net8.0\Core.dll
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\console\bin\Debug\net8.0\Core.pdb
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\console\obj\Debug\net8.0\console.sourcelink.json

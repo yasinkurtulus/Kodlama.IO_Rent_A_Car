@@ -1,0 +1,13 @@
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\bin\Debug\net8.0\Core.deps.json
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\bin\Debug\net8.0\Core.dll
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\bin\Debug\net8.0\Core.pdb
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\obj\Debug\net8.0\Core.csproj.AssemblyReference.cache
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\obj\Debug\net8.0\Core.sourcelink.json
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\obj\Debug\net8.0\Core.dll
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\obj\Debug\net8.0\refint\Core.dll
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\obj\Debug\net8.0\Core.pdb
+D:\Github\Kodlama.IO_Rent_A_Car\Rent_A_Car\Core\obj\Debug\net8.0\ref\Core.dll

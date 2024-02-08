@@ -14,8 +14,29 @@ namespace console
     {
         static void Main(string[] args)
         {
-            Car newcar = new Car { Id = 1, BrandId = 11, ColorId = 12, ModelYear = 2003, DailyPrice = 0, CarName = "updated car" };                       
-            CarManager carManager = new CarManager(new EfCarManager());            
+            //  CarTest();
+            // BrandTest();
+            CarManager carManager = new CarManager(new EfCarManager());
+            foreach (var item in carManager.GetByDetails())
+            {
+                Console.WriteLine(item.Id+"/"+item.BrandName+"/"+item.ColorName);
+            }
+        }
+
+        private static void BrandTest()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandManager());
+            brandManager.Delete(new Brand { BrandId = 17, BrandName = "Mercedes" });
+            foreach (var item in brandManager.GetAll())
+            {
+                Console.WriteLine(item.BrandName);
+            }
+        }
+
+        private static void CarTest()
+        {
+            Car newcar = new Car { Id = 1, BrandId = 11, ColorId = 12, ModelYear = 2003, DailyPrice = 0, CarName = "updated car" };
+            CarManager carManager = new CarManager(new EfCarManager());
             foreach (Car car in carManager.GetAll())
             {
                 Console.WriteLine("Id: " + car.Id +
@@ -36,7 +57,6 @@ namespace console
                                   "\nDailyPrice: " + car.DailyPrice);
                 Console.WriteLine("-----------------------------------");
             }
-            //Id, BrandId, ColorId, ModelYear, DailyPrice
         }
     }
 }
