@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrate;
 using System;
@@ -16,34 +17,39 @@ namespace Business.Concrate
         {
                 iColorDal= icd; 
         }
-        public void Add(Color color)
+        public IResult Add(Color color)
         {
             //BusinesCode
+           
             iColorDal.Add(color);
+            return new SuccesResult();
         }
 
-        public void Delete(Color color)
+        public IResult Delete(Color color)
         {
             //BusinesCode
             iColorDal.Delete(color);
+            return new SuccesResult();
         }
      
-        public List<Color> GetAll()
+        public IDataResult<List<Color>> GetAll()
         {
             //BusinesCode
-            return iColorDal.GetAll();
+            return new SuccesDataResult<List<Color>>(iColorDal.GetAll());
         }
 
-        public Color GetById(int id)
+        public IDataResult<Color>GetById(int id)
         {
             //BusinesCode
-            return iColorDal.Get(b => b.ColorId == id);
+            return new SuccesDataResult<Color>(iColorDal.Get(b => b.ColorId == id));
         }
 
-        public void Update(Color color)
+        public IResult Update(Color color)
         {
             //BusinesCode
+            
             iColorDal.Update(color);
+            return new SuccesResult();
         }
 
     

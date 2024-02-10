@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constant;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrate;
 using Entities.Dtos;
@@ -6,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,72 +22,74 @@ namespace Business.Concrate
             icardal = ıcd;
         }
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
             if (car.CarName.Length > 2&&car.DailyPrice>0)
             {
                 icardal.Add(car);
+                return new SuccesResult(Messages.CarAdded);
             }
             else
             {
-                Console.WriteLine("price must be bigger than" +
-                              " 0 and car name lenght must be bigger than 2");
+                return new ErrorResult(Messages.CarNameInValid);
             }
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
-            foreach (var item in GetAll())
+            foreach (var item in icardal.GetAll())
             {
                 if (car.Id == item.Id)
                 {
+                    
                     icardal.Delete(car);
-                    return;
+                    return new SuccesResult(Messages.CarDeleted);
                 }
 
             }
-            Console.WriteLine("There is no car ıd with "+car.Id);
+
+          return new ErrorResult(Messages.CarCouldntFind);
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-          return  icardal.GetAll();
+          return  new SuccesDataResult<List<Car>>(icardal.GetAll());
         }
 
-        public List<Car> GetByBrandId(int brandId)
+        public IDataResult<List<Car>> GetByBrandId(int brandId)
         {
-            return icardal.GetAll().Where(p => p.BrandId == brandId).ToList();
+            return new SuccesDataResult<List<Car>>(icardal.GetAll(p => p.BrandId == brandId));
         }
 
-        public List<Car> GetByColorId(int colorId)
+        public IDataResult<List<Car>> GetByColorId(int colorId)
         {
-            return icardal.GetAll().Where(p => p.ColorId == colorId).ToList();
+            return new SuccesDataResult<List<Car>>(icardal.GetAll().Where(p => p.ColorId == colorId).ToList());
         }
 
-        public List<CarDetailDto> GetByDetails()
+        public IDataResult<List<CarDetailDto>> GetByDetails()
         {
-            return icardal.GetByDetails();
+            return new SuccesDataResult<List<CarDetailDto>>(icardal.GetByDetails());
         }
 
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
-            foreach (var item in GetAll())
+            foreach (var item in icardal.GetAll())
             {
                 if (car.Id == item.Id)
                 {
                     if (car.CarName.Length > 2 && car.DailyPrice > 0) {
                         icardal.Update(car);
+                        return new SuccesResult(Messages.CarUpdated);                       
                     }
                     else
                     {
-                        Console.WriteLine("price must be bigger than" +
-                             " 0 and car name lenght must be bigger than 2");
+                        return new ErrorResult(Messages.CarPriceInValid);
                     }
 
-                    return;
+                   
                 }
             }
-            Console.WriteLine("There is no car ıd with " + car.Id);
+            return new ErrorResult(Messages.CarCouldntFind);
         }
     }
 }
