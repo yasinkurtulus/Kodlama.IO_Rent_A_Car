@@ -15,15 +15,14 @@ namespace console
     {
         static void Main(string[] args)
         {
-           // CarUpdate();
-          //  CarAdd(new Car { Id=7,CarName="Opel Corsa ",BrandId=11,ColorId=13,DailyPrice=1200,ModelYear=2010});
-            //BrandTest();
-            /*  CarManager carManager = new CarManager(new EfCarManager());           
-              foreach (var item in carManager.GetByDetails().Data)
-              {
-                  Console.WriteLine(item.Id+"/"+item.BrandName+"/"+item.ColorName);
-              }*/
-           // CarGetCategoryId(11);
+            RentalManager rentalManager = new RentalManager(new EfRentalManager());
+            Rental rent1 = new Rental { Id = 1, CarId = 11, RentDate = DateTime.Now, ReturnDate = DateTime.Now };
+            Rental rent2 = new Rental { Id = 2, CarId = 11, RentDate = DateTime.Now,ReturnDate=null};
+            Rental rent3 = new Rental { Id = 3, CarId = 12, RentDate = DateTime.Now,ReturnDate=null};                      
+            Console.WriteLine(rentalManager.Add(rent3).Message);
+           
+         
+
         }
 
         private static void CarAdd(Car car)
