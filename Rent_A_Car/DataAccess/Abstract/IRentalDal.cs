@@ -10,7 +10,7 @@ namespace DataAccess.Abstract
 {
     public interface IRentalDal:IEntityRepository<Rental>
     {
-
+        void CarDelivered(int id);
 
     }
 }

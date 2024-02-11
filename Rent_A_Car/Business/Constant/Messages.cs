@@ -18,5 +18,10 @@ namespace Business.Constant
         public static string MaintenanceTime = " Maintenance Time";
         public static string CarRented = " Car Rented";
         public static string CarCanNotBeRent = " Car can not be rent";
+        public static string UserAlreadyExist = " User Already Exist";
+        public static string UserDoesNotExist = " User Does Not Exist";
+        public static string UserDeleted = "User Deleted";
+        public static string CarRentDNE = "CarRENT DNE";
+        public static string CarDelivere = "CarDelivered";
     }
 }

@@ -16,10 +16,9 @@ namespace console
         static void Main(string[] args)
         {
             RentalManager rentalManager = new RentalManager(new EfRentalManager());
-            Rental rent1 = new Rental { Id = 1, CarId = 11, RentDate = DateTime.Now, ReturnDate = DateTime.Now };
-            Rental rent2 = new Rental { Id = 2, CarId = 11, RentDate = DateTime.Now,ReturnDate=null};
-            Rental rent3 = new Rental { Id = 3, CarId = 12, RentDate = DateTime.Now,ReturnDate=null};                      
-            Console.WriteLine(rentalManager.Add(rent3).Message);
+
+            Console.WriteLine(  rentalManager.CarDelivered(3).Message);
+            Console.WriteLine(  rentalManager.CarDelivered(4).Message);
            
          
 

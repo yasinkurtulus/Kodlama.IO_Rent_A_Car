@@ -66,6 +66,17 @@ namespace Business.Concrate
             return new SuccesDataResult<Rental>(_rentalDal.Get(r => r.Id == id));
         }
 
+        public IResult CarDelivered(int id)
+        {
+            var result = _rentalDal.Get(r => r.Id == id);
+            if (result==null||result.ReturnDate!=null)
+            {
+                return new ErrorResult(Messages.CarRentDNE);
+            }
+            _rentalDal.CarDelivered(id);
+            return new SuccesResult(Messages.CarDelivere);
+        }
+
         public IResult Update(Rental rental)
         {
             //BusinesCode

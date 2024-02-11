@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constant;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrate;
@@ -20,15 +21,27 @@ namespace Business.Concrate
         public IResult Add(User user)
         {
             //BusinessCode
-            _userDal.Add(user);
-            return new SuccesResult();
+           var result=_userDal.Get(u=>u.Id == user.Id);
+            if (result == null)
+            {
+                _userDal.Add(user);
+                return new SuccesResult();
+            }
+            return new ErrorResult(Messages.UserAlreadyExist);
+           
         }
 
         public IResult Delete(User user)
         {
             //BusinessCode
+            var result = _userDal.Get(u => u.Id == user.Id);
+            if (result == null)
+            {
+                return new ErrorResult(Messages.UserDoesNotExist);
+            }
+            
             _userDal.Delete(user); 
-            return new SuccesResult();
+            return new SuccesResult(Messages.UserDeleted);
         }
 
         public IDataResult<List<User>> GetAll()
