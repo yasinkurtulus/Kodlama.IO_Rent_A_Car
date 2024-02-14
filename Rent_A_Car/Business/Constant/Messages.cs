@@ -14,6 +14,7 @@ namespace Business.Constant
         public static string CarNameInValid = "Product Name is inValid";
         public static string CarPriceInValid = "Product Price is inValid";
         public static string CarCouldntFind = "Car Couldnt Find";
+        public static string ThereIsNoCarWithThisBrand = "ThereIsNoCarWithThisBrand";
         public static string Listed = "Products Listed";
         public static string MaintenanceTime = " Maintenance Time";
         public static string CarRented = " Car Rented";

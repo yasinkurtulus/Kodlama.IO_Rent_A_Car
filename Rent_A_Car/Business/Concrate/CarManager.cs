@@ -57,8 +57,9 @@ namespace Business.Concrate
         }
 
         public IDataResult<List<Car>> GetByBrandId(int brandId)
-        {
-            return new SuccesDataResult<List<Car>>(icardal.GetAll(p => p.BrandId == brandId));
+
+        {                        
+            return new SuccesDataResult<List<Car>>(icardal.GetAll(p => p.BrandId == brandId));                                               
         }
 
         public IDataResult<List<Car>> GetByColorId(int colorId)

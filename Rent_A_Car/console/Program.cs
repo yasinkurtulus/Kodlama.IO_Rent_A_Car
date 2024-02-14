@@ -26,7 +26,7 @@ namespace console
 
         private static void CarAdd(Car car)
         {
-            CarManager carManager = new CarManager(new EfCarManager());
+            CarManager carManager = new CarManager(new EfCarDal());
             var result = carManager.Add(car);
             if (result.Succes==true) {
                 Console.WriteLine(result.Message);
@@ -36,7 +36,7 @@ namespace console
 
         private static void BrandTest()
         {
-            BrandManager brandManager = new BrandManager(new EfBrandManager());
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
             brandManager.Delete(new Brand { BrandId = 17, BrandName = "Mercedes" });
             foreach (var item in brandManager.GetAll().Data)
             {
@@ -47,7 +47,7 @@ namespace console
         private static void CarUpdate()
         {
             Car newcar = new Car { Id = 5, BrandId = 11, ColorId = 12, ModelYear = 2003, DailyPrice = 1000, CarName = "updated car" };
-            CarManager carManager = new CarManager(new EfCarManager());
+            CarManager carManager = new CarManager(new EfCarDal());
             foreach (Car car in carManager.GetAll().Data)
             {
                 Console.WriteLine("Id: " + car.Id +
@@ -84,7 +84,7 @@ namespace console
         }
         private static void CarGetCategoryId(int id)
         {
-            CarManager carManager = new CarManager(new EfCarManager());
+            CarManager carManager = new CarManager(new EfCarDal());
             var result = carManager.GetByBrandId(id);
             foreach (var item in result.Data)
             {

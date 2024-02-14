@@ -13,8 +13,8 @@ namespace Business.Concrate
 {
     public class UserManager : IUserService
     {
-        IUsersDal _userDal;
-        public UserManager(IUsersDal ısd)
+        IUserDal _userDal;
+        public UserManager(IUserDal ısd)
         {
             _userDal = ısd;
         }
